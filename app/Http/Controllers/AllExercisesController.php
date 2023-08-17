@@ -2,30 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\AllExercises;
-use Illuminate\Http\Request;
+use App\Services\AllExercisesService;
+
 
 class AllExercisesController extends Controller
 {
 
+    private $allExercisesService;
+
+    public function __construct(AllExercisesService $allExercisesService)
+    {
+        $this->allExercisesService = $allExercisesService;
+    }
+
     public function getAllExercises()
     {
-        $exercises = AllExercises::all();
-        if ($exercises) {
-            return response()->json($exercises);
-        } else {
-            return response()->json(["message" => "No Exercises found for this group"], 404);
-        }
+        return $this->allExercisesService->getAllExercises();
     }
 
     public function getExercisesByMuscGroup($id)
     {
-        $exercises = AllExercises::where('muscular_group', $id)->get();
-        if ($exercises) {
-            return response()->json($exercises);
-        } else {
-            return response()->json(["message" => "No Exercises found for this group"], 404);
-        }
+        return $this->allExercisesService->getExercisesByMuscGroup($id);
     }
 }

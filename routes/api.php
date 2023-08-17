@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\AllExercisesController;
+use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\ModesController;
+use App\Http\Controllers\MuscularGroupController;
+use App\Http\Controllers\OrientationsController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TechniquesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +27,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('hello', [StudentController::class, 'sayHi']);
 
 Route::get('getAllExercises', [ AllExercisesController::class, 'getAllExercises' ]);
-Route::get('getExercisesByGroup/{id}', [ AllExercisesController::class, 'getExercisesByMuscGroup' ]);
+Route::get('getExercisesByMuscGroup/{id}', [ AllExercisesController::class, 'getExercisesByMuscGroup' ]);
 
+Route::get('getMuscularGroups', [ MuscularGroupController::class, 'getAllMuscularGroups' ]);
 
+Route::get('getAllModes', [ ModesController::class, 'getAllModes' ]);
+
+Route::get('getOrientations', [ OrientationsController::class, 'getAllOrientations' ]);
+
+Route::get('getTechniques', [ TechniquesController::class, 'getAllTechniques' ]);
+
+Route::get('getExercisesByWorkout/{id}', [ ExerciseController::class, 'getExByWorkout' ]);
 
 //Route::post('create-student',           [StudentController::class, 'createStudent']);
 //Route::get('list-student/{id}',         [StudentController::class, 'getStudent']);
