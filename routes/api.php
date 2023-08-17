@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\AllExercisesController;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\HeightController;
 use App\Http\Controllers\ModesController;
 use App\Http\Controllers\MuscularGroupController;
 use App\Http\Controllers\OrientationsController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TechniquesController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,20 +24,24 @@ use Illuminate\Support\Facades\Route;
 // return $request->user();
 //});
 
-Route::get('hello', [StudentController::class, 'sayHi']);
 
-Route::get('getAllExercises', [ AllExercisesController::class, 'getAllExercises' ]);
-Route::get('getExercisesByMuscGroup/{id}', [ AllExercisesController::class, 'getExercisesByMuscGroup' ]);
+Route::post('create-new-ex', [ ExerciseController::class, 'createNewExercise' ]);
 
-Route::get('getMuscularGroups', [ MuscularGroupController::class, 'getAllMuscularGroups' ]);
+Route::get('get-all-exercises', [ AllExercisesController::class, 'getAllExercises' ]);
 
-Route::get('getAllModes', [ ModesController::class, 'getAllModes' ]);
+Route::get('get-exercises-by-musc-group/{id}', [ AllExercisesController::class, 'getExercisesByMuscGroup' ]);
 
-Route::get('getOrientations', [ OrientationsController::class, 'getAllOrientations' ]);
+Route::get('get-muscular-groups', [ MuscularGroupController::class, 'getAllMuscularGroups' ]);
 
-Route::get('getTechniques', [ TechniquesController::class, 'getAllTechniques' ]);
+Route::get('get-all-modes', [ ModesController::class, 'getAllModes' ]);
 
-Route::get('getExercisesByWorkout/{id}', [ ExerciseController::class, 'getExByWorkout' ]);
+Route::get('get-orientations', [ OrientationsController::class, 'getAllOrientations' ]);
+
+Route::get('get-techniques', [ TechniquesController::class, 'getAllTechniques' ]);
+
+Route::get('get-exercises-by-workout/{id}', [ ExerciseController::class, 'getExByWorkout' ]);
+
+Route::get('get-heights', [ HeightController::class, 'getHeights' ]);
 
 //Route::post('create-student',           [StudentController::class, 'createStudent']);
 //Route::get('list-student/{id}',         [StudentController::class, 'getStudent']);

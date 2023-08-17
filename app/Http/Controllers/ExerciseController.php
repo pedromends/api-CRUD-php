@@ -15,6 +15,12 @@ class ExerciseController extends Controller
         $this->exerciseService = $exerciseService;
     }
 
+    public function createNewExercise(Request $request)
+    {
+        $data = $request->all();
+        return $this->exerciseService->createNewExercise($data);
+    }
+
     public function getExByWorkout($id)
     {
         return $this->exerciseService->getExercisesByWorkout($id);

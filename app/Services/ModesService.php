@@ -12,7 +12,7 @@ class ModesService
         if ($modes) {
             return response()->json($modes);
         } else {
-            return response()->json(["message" => "No Exercises found for this group"], 404);
+            return response()->json(["message" => "No Exercise found for this group"], 404);
         }
     }
 }

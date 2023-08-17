@@ -12,7 +12,7 @@ class AllExercisesService
         if ($exercises) {
             return response()->json($exercises);
         } else {
-            return response()->json(["message" => "No Exercises found for this group"], 404);
+            return response()->json(["message" => "No Exercise found for this group"], 404);
         }
     }
 
@@ -22,7 +22,7 @@ class AllExercisesService
         if ($exercises) {
             return response()->json($exercises);
         } else {
-            return response()->json(["message" => "No Exercises found for this group"], 404);
+            return response()->json(["message" => "No Exercise found for this group"], 404);
         }
     }
 }
