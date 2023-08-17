@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
 
+    public function sayHi(Request $request)
+    {
+        return 'Its working';
+    }
+
+
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -30,7 +34,6 @@ class StudentController extends Controller
 
     /**
      * Display the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -46,7 +49,6 @@ class StudentController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function getAllStudents()

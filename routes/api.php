@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllExercisesController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,16 @@ use Illuminate\Support\Facades\Route;
 // return $request->user();
 //});
 
-Route::post('create-student',           [StudentController::class, 'createStudent']);
-Route::get('list-student/{id}',         [StudentController::class, 'getStudent']);
-Route::get('list-students',             [StudentController::class, 'getAllStudents']);
-Route::put('update-student/{id}',       [StudentController::class, 'updateStudent']);
-Route::delete('delete-student/{id}',    [StudentController::class, 'deleteStudent']);
+Route::get('hello', [StudentController::class, 'sayHi']);
+
+Route::get('getAllExercises', [ AllExercisesController::class, 'getAllExercises' ]);
+Route::get('getExercisesByGroup/{id}', [ AllExercisesController::class, 'getExercisesByMuscGroup' ]);
+
+
+
+//Route::post('create-student',           [StudentController::class, 'createStudent']);
+//Route::get('list-student/{id}',         [StudentController::class, 'getStudent']);
+//Route::get('list-students',             [StudentController::class, 'getAllStudents']);
+//Route::put('update-student/{id}',       [StudentController::class, 'updateStudent']);
+//Route::delete('delete-student/{id}',    [StudentController::class, 'deleteStudent']);
 
